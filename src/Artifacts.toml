@@ -1,6 +1,2 @@
 [syukujitsu]
 git-tree-sha1 = "cee02e15612a7fee4863a3f631e72b76ead6664d"
-
-    [[syukujitsu.download]]
-    sha256 = "be9a90ab26944a0c0ef3bd9df08b0ffab03ec53d173bb69de82cbf8dcfb06b3d"
-    url = "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv"

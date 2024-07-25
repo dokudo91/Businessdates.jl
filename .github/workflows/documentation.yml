@@ -18,8 +18,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v2
       - uses: julia-actions/cache@v1
-      - name: Ensure artifacts
-        run: julia --project -e 'using Pkg; Pkg.ensure_artifact_installed("syukujitsu", "src/Artifacts.toml")'
+      # - name: Ensure artifacts
+      #   run: julia --project -e 'using Pkg; Pkg.ensure_artifact_installed("syukujitsu", "src/Artifacts.toml")'
       - name: Install dependencies
         run: julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
       - name: Build and deploy
