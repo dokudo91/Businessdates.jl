@@ -4,6 +4,8 @@ include("artifacts.jl")
 """
     load_holidaydf()
 
+祝日情報をDataFrameで取得する
+# Example
 ```jldoctest
 julia> load_holidaydf()[1, 1]
 1955-01-01
@@ -18,6 +20,8 @@ end
     isbday(dt, holidates)
     isbday(dt)
 
+営業日かどうか判定する
+# Example
 ```jldoctest
 julia> isbday(Date(2000))
 false
@@ -33,6 +37,8 @@ isbday(dt) = isbday(dt, load_holidaydf()[!, 1])
     tobnext(dt, holidates)
     tobnext(dt)
 
+次の営業日を返す
+# Example
 ```jldoctest
 julia> tobnext(Date(2000))
 2000-01-03
@@ -45,6 +51,8 @@ tobnext(dt) = tobnext(dt, load_holidaydf()[!, 1])
     tobprev(dt, holidates)
     tobprev(dt)
 
+前の営業日を返す
+# Example
 ```jldoctest
 julia> tobprev(Date(2000))
 1999-12-31
