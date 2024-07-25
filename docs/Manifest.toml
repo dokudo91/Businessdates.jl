@@ -25,7 +25,7 @@ uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[deps.Businessdates]]
-deps = ["CSV", "DataFrames", "Dates", "DelimitedFiles", "StringEncodings"]
+deps = ["CSV", "DataFrames", "Dates", "Pkg", "StringEncodings"]
 path = ".."
 uuid = "9c706bde-65a8-4e4f-8109-0cd73ac330a2"
 version = "0.1.0"
@@ -87,12 +87,6 @@ version = "1.0.0"
 [[deps.Dates]]
 deps = ["Printf"]
 uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
-
-[[deps.DelimitedFiles]]
-deps = ["Mmap"]
-git-tree-sha1 = "9e2f36d3c96a820c678f2f1f1782582fcf685bae"
-uuid = "8bb1440f-4735-579b-a4ab-409b98df4dab"
-version = "1.9.1"
 
 [[deps.DocStringExtensions]]
 deps = ["LibGit2"]
