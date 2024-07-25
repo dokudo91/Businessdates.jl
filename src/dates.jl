@@ -10,7 +10,7 @@ julia> load_holidaydf()[1, 1]
 ```
 """
 function load_holidaydf()
-    df = CSV.File(open(syukujitsu_path(), enc"shift-jis")) |> DataFrame
+    df = CSV.File(open(syukujitsucsv_path(), enc"shift-jis")) |> DataFrame
     transform!(df, 1 => ByRow(x -> Date(x, dateformat"yyyy/mm/dd")); renamecols=false)
 end
 

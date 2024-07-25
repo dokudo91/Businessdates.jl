@@ -10,11 +10,4 @@ function update_artifacts()
     hash
 end
 
-function syukujitsu_path()
-    artifact_toml = joinpath(@__DIR__, "Artifacts.toml")
-    hash = artifact_hash("syukujitsu", artifact_toml)
-    if isnothing(hash) || !artifact_exists(hash)
-        hash = update_artifacts()
-    end
-    joinpath(artifact"syukujitsu", "syukujitsu.csv")
-end
+syukujitsucsv_path() = joinpath(artifact"syukujitsu", "syukujitsu.csv")
