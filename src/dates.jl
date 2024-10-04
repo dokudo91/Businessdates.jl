@@ -60,3 +60,19 @@ julia> tobprev(Date(2000))
 """
 tobprev(dt, holidates) = toprev(d -> isbday(d, holidates), dt)
 tobprev(dt) = tobprev(dt, load_holidaydf()[!, 1])
+
+"""
+    btoday(holidates)
+    btoday()
+
+今日が営業日であればそのまま返し、祝日であれば次の営業日を返す。
+"""
+function btoday(holidates)
+    day = today()
+    if isbday(day, holidates)
+        day
+    else
+        tobnext(day, holidates)
+    end
+end
+btoday() = btoday(load_holidaydf()[!, 1])

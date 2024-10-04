@@ -9,12 +9,9 @@ function update_artifacts()
     bind_artifact!(artifact_toml, "syukujitsu", hash; force=true)
     hash
 end
+syukujitsucsv_path() = joinpath(artifact"syukujitsu", "syukujitsu.csv")
 
-function syukujitsucsv_path()
-    artifact_toml = joinpath(@__DIR__, "Artifacts.toml")
-    hash = artifact_hash("syukujitsu", artifact_toml)
-    if isnothing(hash) || !artifact_exists(hash)
-        hash = update_artifacts()
-    end
-    joinpath(artifact"syukujitsu", "syukujitsu.csv")
+try
+    update_artifacts()
+catch
 end
